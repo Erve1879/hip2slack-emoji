@@ -60,7 +60,7 @@ class EmojiImporter(object):
             name = div.text.strip()[1:-1]
             img = div.find('img')
             img_url = img.attrs['src']
-            img_url = '@4x.'join(img_url.split('.'))
+            img_url = '@4x.'.join(img_url.split('.'))
             filepath = download_file(img_url, filedir='/tmp/emojis')
             emoji = Emoji(name, filepath)
             self.emojis.append(emoji)
